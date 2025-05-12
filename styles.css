@@ -1,0 +1,212 @@
+/* Estilos Generales y Fuente */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente sans-serif moderna */
+    margin: 0;
+    padding: 20px;
+    background-color: #fdf6f8; /* Fondo general muy claro, casi blanco rosado */
+    color: #333; /* Color de texto principal oscuro */
+    line-height: 1.6; /* Espaciado de línea para legibilidad */
+}
+
+/* Contenedor Principal del CV */
+.cv-container {
+    max-width: 950px; /* Ancho máximo para mejor lectura en pantallas grandes */
+    margin: 30px auto; /* Centrado horizontal con margen superior/inferior */
+    background-color: #fff; /* Fondo blanco para el contenido del CV */
+    border: 1.5px solid #e8a0bf; /* Borde principal en tono rosa medio */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para dar profundidad */
+    border-radius: 8px; /* Esquinas ligeramente redondeadas */
+    overflow: hidden; /* Asegura que los bordes contengan todo */
+}
+
+/* DIV 1: Cabecera */
+.header {
+    display: flex; /* Alineación flexible para foto y nombre/título */
+    align-items: center; /* Centrado vertical */
+    padding: 30px;
+    border-bottom: 1px solid #f7cac9; /* Separador rosa pálido */
+    background-color: #fff9fb; /* Fondo muy sutil rosado para la cabecera */
+}
+
+.photo-placeholder {
+    width: 110px;
+    height: 110px;
+    border: 2px dashed #d870a9; /* Borde discontinuo en rosa más intenso */
+    border-radius: 50%; /* Para un look más moderno, hacemos la foto redonda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    color: #a0a0a0; /* Color grisáceo para el texto placeholder */
+    font-size: 0.9em;
+    text-align: center;
+    flex-shrink: 0; /* Evita que se encoja si el nombre es largo */
+}
+
+.name-title h1 {
+    margin: 0 0 5px 0;
+    color: #c83369; /* Rosa oscuro/magenta para el nombre principal */
+    font-weight: 700; /* Más peso para el nombre */
+    font-size: 2.2em; /* Tamaño grande */
+}
+
+.name-title h2 {
+    margin: 0;
+    color: #666; /* Gris oscuro para el título */
+    font-weight: 300; /* Peso ligero para el título */
+    font-style: italic; /* Estilo cursiva */
+    font-size: 1.2em;
+}
+
+/* DIV 2: Contenedor Principal del Contenido (Flex Container) */
+.main-content {
+    display: flex; /* Habilita Flexbox para las columnas */
+    padding: 25px; /* Padding interior general */
+    border-bottom: 1px solid #f7cac9; /* Separador rosa pálido antes del footer */
+}
+
+/* DIV 3: Columna Izquierda */
+.left-column {
+    flex: 0 0 35%; /* Ancho fijo (35%) para la columna izquierda */
+    padding-right: 25px; /* Espacio a la derecha, separando de la otra columna */
+    /* No se necesita borde si queremos un look más limpio */
+}
+
+/* DIV 4: Columna Derecha */
+.right-column {
+    flex: 1; /* Ocupa el espacio restante */
+    padding-left: 25px; /* Espacio a la izquierda */
+    border-left: 1px solid #fde3ec; /* Línea divisoria muy sutil rosa */
+}
+
+/* Estilos de Secciones Comunes */
+section {
+    margin-bottom: 30px; /* Espacio entre secciones */
+}
+
+section:last-child {
+    margin-bottom: 0; /* Eliminar margen inferior de la última sección */
+}
+
+section h3 {
+    color: #d870a9; /* Rosa medio para los títulos de sección */
+    border-bottom: 2px solid #fceef5; /* Línea inferior muy pálida */
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    font-weight: 400; /* Peso normal */
+    font-size: 1.3em;
+}
+
+/* Estilos de Listas */
+ul {
+    list-style: none; /* Quita los puntos por defecto */
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Espacio para el marcador '>' */
+    position: relative; /* Necesario para posicionar el ::before */
+    color: #555; /* Color de texto gris oscuro para ítems de lista */
+}
+
+/* Marcador '>' personalizado como en el mockup */
+li::before {
+    content: '>'; /* El caracter '>' */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e8a0bf; /* Color rosa medio para el marcador */
+    font-weight: bold; /* Hacerlo un poco más grueso */
+}
+
+p {
+    color: #555;
+    font-size: 0.98em;
+    text-align: justify; /* Justificar texto para un look más ordenado */
+}
+
+/* DIV 5: Pie de Página */
+.footer {
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos equitativamente */
+    align-items: center; /* Centrado vertical */
+    padding: 20px 30px;
+    background-color: #fff9fb; /* Mismo fondo sutil que la cabecera */
+    color: #444; /* Color de texto gris oscuro */
+    font-size: 0.9em;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+}
+
+.footer div {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px; /* Espacio alrededor de cada item del footer */
+}
+
+.footer .icon {
+    margin-right: 8px;
+    color: #c83369; /* Iconos en rosa oscuro/magenta */
+    font-size: 1.3em; /* Iconos un poco más grandes */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Menos padding en pantallas pequeñas */
+    }
+
+    .cv-container {
+        margin: 15px auto; /* Menos margen */
+    }
+
+    .header {
+        flex-direction: column; /* Apila foto y nombre */
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 20px;
+    }
+
+     .photo-placeholder {
+        margin-bottom: 15px; /* Espacio debajo de la foto */
+        width: 90px;
+        height: 90px;
+    }
+
+    .name-title h1 {
+        font-size: 1.8em;
+    }
+    .name-title h2 {
+        font-size: 1.1em;
+    }
+
+    .main-content {
+        flex-direction: column; /* Apila las columnas */
+        padding: 20px;
+    }
+
+    .left-column, .right-column {
+        flex: 1 0 100%; /* Columnas ocupan todo el ancho */
+        padding-right: 0;
+        padding-left: 0;
+        border-left: none; /* Quita el borde izquierdo de la columna derecha */
+    }
+
+    .left-column {
+         border-bottom: 1px solid #fde3ec; /* Añade separador horizontal */
+         margin-bottom: 20px; /* Espacio antes de la siguiente columna */
+         padding-bottom: 20px; /* Padding inferior */
+    }
+
+    .footer {
+        flex-direction: column; /* Apila los elementos del footer */
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 15px 20px;
+    }
+     .footer div {
+        margin-bottom: 10px;
+        width: 100%; /* Ocupa todo el ancho para mejor alineación */
+    }
+     .footer div:last-child {
+        margin-bottom: 0;
+    }
+}
